@@ -2,9 +2,7 @@
   "name": "api",
   "type": "module",
   "scripts": {
-    "dev": "vc dev",
-    "build": "vc build",
-    "start": "vc start"
+    "dev": "vc dev"
   },
   "dependencies": {
     "hono": "^4.9.2"
