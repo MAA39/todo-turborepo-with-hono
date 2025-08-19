@@ -20,7 +20,7 @@ const ThemeImage = (props: Props) => {
 const API_URL = process.env.VERCEL
   ? // ? 'https://hono-turborepo-api-demo.vercel.app'
     "https://todo-turborepo-with-hono-api.vercel.app"
-  : "http://localhost:3000";
+  : "http://localhost:8080";
 
 export default async function Home() {
   const result = await fetch(API_URL)

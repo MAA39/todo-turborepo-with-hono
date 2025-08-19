@@ -2,7 +2,7 @@
   "name": "api",
   "type": "module",
   "scripts": {
-    "dev": "node --loader @hono/node-server/register src/index.ts",
+    "dev": "tsx src/index.ts",
     "dev:vercel": "vc dev"
   },
   "dependencies": {
@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "tsx": "^4.20.0"
   }
 }

@@ -1,10 +1,10 @@
-import { Hono } from "hono";
 import { serve } from "@hono/node-server";
+import { Hono } from "hono";
 
 const app = new Hono();
 
 app.get("/", (c) => {
-  return c.text("Hello from the Hono API!");
+  return c.text("Hello from the Hono API! todo turborepo with hono");
 });
 
 // For Vercel deployment
