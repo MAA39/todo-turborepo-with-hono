@@ -1,21 +1,21 @@
-import Image, { type ImageProps } from 'next/image'
-import styles from './page.module.css'
+import Image, { type ImageProps } from "next/image";
+import styles from "./page.module.css";
 
-type Props = Omit<ImageProps, 'src'> & {
-  srcLight: string
-  srcDark: string
-}
+type Props = Omit<ImageProps, "src"> & {
+  srcLight: string;
+  srcDark: string;
+};
 
 const ThemeImage = (props: Props) => {
-  const { srcLight, srcDark, ...rest } = props
+  const { srcLight, srcDark, ...rest } = props;
 
   return (
     <>
       <Image {...rest} src={srcLight} className="imgLight" alt="" />
       <Image {...rest} src={srcDark} className="imgDark" alt="" />
     </>
-  )
-}
+  );
+};
 
 const API_URL = process.env.VERCEL
   ? // ? 'https://hono-turborepo-api-demo.vercel.app'
@@ -25,7 +25,7 @@ const API_URL = process.env.VERCEL
 export default async function Home() {
   const result = await fetch(API_URL)
     .then((res) => res.text())
-    .catch(() => 'Hello from Hono!')
+    .catch(() => "Hello from Hono!");
 
   return (
     <div className={styles.page}>
@@ -51,8 +51,7 @@ export default async function Home() {
             className={styles.primary}
             href="https://vercel.com/new/clone?demo-description=Learn+to+implement+a+monorepo+with+a+two+Next.js+sites+that+has+installed+three+local+packages.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4K8ZISWAzJ8X1504ca0zmC%2F0b21a1c6246add355e55816278ef54bc%2FBasic.png&demo-title=Monorepo+with+Turborepo&demo-url=https%3A%2F%2Fexamples-basic-web.vercel.sh%2F&from=templates&project-name=Monorepo+with+Turborepo&repository-name=monorepo-turborepo&repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fturborepo%2Ftree%2Fmain%2Fexamples%2Fbasic&root-directory=apps%2Fdocs&skippable-integrations=1&teamSlug=vercel&utm_source=create-turbo"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             <Image
               className={styles.logo}
               src="/vercel.svg"
@@ -66,14 +65,13 @@ export default async function Home() {
             href="https://turborepo.com/docs?utm_source"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.secondary}
-          >
+            className={styles.secondary}>
             Read our docs
           </a>
         </div>
         <div className={styles.result}>
           <h3>
-            API Response from{' '}
+            API Response from{" "}
             <a href={API_URL} target="_blank" rel="noreferrer">
               <code>{API_URL}</code>
             </a>
@@ -86,8 +84,7 @@ export default async function Home() {
         <a
           href="https://vercel.com/templates?search=turborepo&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           <Image
             aria-hidden
             src="/window.svg"
@@ -100,8 +97,7 @@ export default async function Home() {
         <a
           href="https://turborepo.com?utm_source=create-turbo"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           <Image
             aria-hidden
             src="/globe.svg"
@@ -113,5 +109,5 @@ export default async function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
