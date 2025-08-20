@@ -1,12 +1,27 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "ui": "stream",
+  "globalEnv": [
+    "NODE_ENV",
+    "NEXT_PUBLIC_APP_NAME",
+    "NEXT_PUBLIC_API_BASE_URL",
+    "NEXT_PUBLIC_SENTRY_DSN",
+    "INTERNAL_API_BASE_URL"
+  ],
+  "globalPassThroughEnv": [
+    "DATABASE_URL",
+    "JWT_SECRET",
+    "LOG_LEVEL",
+    "PORT",
+    "CORS_ORIGIN",
+    "INTERNAL_FEATURE_FLAG_TODO_BETA",
+    "VERCEL"
+  ],
   "tasks": {
     "build": {
-      "env": ["VERCEL"],
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**", ".vercel/output/**"]
+      "outputs": [".next/**", "!.next/cache/**", ".vercel/output/**", "dist/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
