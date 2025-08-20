@@ -1,6 +1,3 @@
-// 🚨 環境変数を最初に読み込み（他のimportより前に実行）
-import "./bootstrap/env-load";
-
 import { env } from "./env.js";
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";

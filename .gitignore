@@ -20,6 +20,8 @@ coverage
 # Vercel
 .vercel
 .claude
+.serena
+
 # Build Outputs
 .next/
 out/
